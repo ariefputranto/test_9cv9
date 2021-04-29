@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test number 1</title>
+	<style type="text/css">
+		.container {
+			max-width: 800px;
+			min-width: 600px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 40px;
+		}
+		.d-flex {
+			display: flex;
+		}
+		.d-block {
+			display: block;
+		}
+		.d-inline-block {
+			display: inline-block;
+		}
+		.align-center {
+			align-items: center;
+		}
+		.justify-space-between {
+			justify-content: space-between;
+		}
+		.w-50 {
+			width: 50%;
+		}
+		.font-6 {
+			font-size: 6px;
+		}
+		.font-12 {
+			font-size: 12px;
+		}
+		.font-14 {
+			font-size: 14px;
+		}
+		.font-16 {
+			font-size: 16px;
+		}
+		.font-24 {
+			font-size: 24px;
+		}
+		.txt-white {
+			color: white;
+		}
+		.txt-gray {
+			color: #a4a4a4;
+		}
+		.txt-blue-gray {
+			color: #84c2e8;
+		}
+		.mt-0 {
+			margin-top: 0px;
+		}
+		.mt-16 {
+			margin-top: 16px;
+		}
+		.mt-24 {
+			margin-top: 24px;
+		}
+		.ml-auto {
+			margin-left: auto;
+		}
+		.ml-4 {
+			margin-left: 4px;
+		}
+		.ml-8 {
+			margin-left: 8px;
+		}
+		.mr-8 {
+			margin-right: 8px;
+		}
+		.mb-0 {
+			margin-bottom: 0;
+		}
+		.mb-16 {
+			margin-bottom: 16px;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.float-right {
+			float: right;
+		}
+		.relative {
+			position: relative;
+		}
+		.uppercase {
+			text-transform: uppercase;
+		}
+		.flex-grow {
+			flex: 1;
+			flex-grow: 1;
+		}
+		.h-50 {
+			height: 50px;
+		}
+
+		.card {
+			width: 300px;
+			height: 170px;
+			background-color: #01a9f4;
+			border-radius: 15px;
+			-webkit-box-shadow: 2px 4px 3px 0px #000000; 
+			box-shadow: 2px 4px 3px 0px #000000;
+			position: relative;
+			padding: 16px;
+			overflow: hidden;
+		}
+		.card::before {
+			content: '';
+			position: absolute;
+			top: 80px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #0189d1;
+			z-index: 1049;
+		}
+		.card::after {
+		    content: '';
+		    position: absolute;
+		    top: 60px;
+		    left: -1100px;
+		    width: 2000px;
+		    height: 2000px;
+		    background-color: #0189d1;
+		    border-top-left-radius: 200%;
+		    border-top-right-radius: 100%;
+			z-index: 1049;
+		}
+		.card .card-body {
+			z-index: 1050;
+			position: absolute;
+			top: 10px;
+			right: 20px;
+			bottom: 10px;
+			left: 20px;
+		}
+
+		.card .card-logo {
+			height: 40px;
+		}
+		.card .card-mastercard {
+			height: 50px;
+			display: block;
+			margin-left: auto;
+		}
+		.card .card-number {
+		    text-align-last: justify;
+		    letter-spacing: 2px;
+		}
+
+		.triangle-right {
+			width: 0;
+			height: 0;
+			border-left: 6px solid white;
+			border-top: 3px solid transparent;
+			border-bottom: 3px solid transparent;
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #a4a4a4;
+			box-sizing: border-box;
+		}
+		.gray-btn {
+		    color: white;
+		    background-color: #909090;
+		    padding: 4px;
+		    border-radius: 4px;
+		    font-size: 12px;
+		    margin-bottom: 4px;
+		    line-height: 7px;
+		}
+		.card-icon {
+			max-height: 32px;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="d-flex">
+			<div class="w-50">
+				<div class="card">
+					<div class="card-body">
+						<div class="d-flex align-center">
+							<div class="w-50">
+								<img class="card-logo" src="./assets/images/card-logo.png">
+							</div>
+							<div class="w-50 h-50">
+								<img class="card-mastercard" data-mastercard="./assets/images/card-mastercard.png" data-visa="./assets/images/card-visa.png">
+							</div>
+						</div>
+						<div class="mt-24">
+							<p class="mb-0 font-12 txt-blue-gray">card number</p>
+							<p class="mb-0 font-24 txt-white mt-0 bold card-number">xxxx xxxx xxxx xxxx</p>
+						</div>
+						<div class="mt-16">
+							<div class="d-flex">
+								<div class="flex-grow">
+									<p class="mb-0 font-12 txt-blue-gray">cardholder name</p>
+									<p class="mb-0 font-16 txt-white mt-0 bold card-holder uppercase">xxxxx xxxxx</p>
+								</div>
+								<div>
+									<div class="d-inline-block float-right">
+										<p class="mb-0 font-12 txt-blue-gray">expiration</p>
+										<div class="d-flex align-center">
+											<div>
+												<p class="mb-0 font-6 txt-white mt-0">VALID</p>
+												<p class="mb-0 font-6 txt-white  mt-0">THRU</p>
+											</div>
+											<div class="triangle-right ml-4"></div>
+											<p class="mb-0 font-16 txt-white mt-0 bold ml-8 expiration-date uppercase">xx / xx</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-50">
+				<div class="mb-16">
+					<p class="mb-0 mt-0 txt-gray font-14">Name </p>
+					<input type="text" name="name" class="form-control" max-length="10" autocomplete="off">
+				</div>
+				<div class="mb-16">
+					<div class="d-flex justify-space-between align-center">
+						<p class="mb-0 mt-0 txt-gray font-14">Card Number </p>
+						<p class="mb-0 mt-0 gray-btn font-14 generate-random" max-length="16">generate random </p>
+					</div>
+					<div class="relative">
+						<input type="text" name="card-number" class="form-control" max-length="16" autocomplete="off">
+						<img style="display: none;" data-mastercard="./assets/images/mastercard-icon.png" data-visa="./assets/images/visa-icon.png" class="card-icon">
+					</div>
+				</div>
+				<div class="mb-16 d-flex">
+					<div class="w-50 mr-8">
+						<p class="mb-0 mt-0 txt-gray font-14">Expiration (mm/yy) </p>
+						<input type="text" name="expiration" class="form-control" max-length="4" autocomplete="off">
+					</div>
+					<div class="w-50">
+						<p class="mb-0 mt-0 txt-gray font-14">Security Code </p>
+						<input type="password" name="security-code" class="form-control" autocomplete="off">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./assets/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var card = $('.card')
+
+			// fill empty with x
+			function generateX(value, max_length) {
+				max_length = parseInt(max_length)
+				var loop = max_length - value.length
+
+				for (var i = 0; i < loop; i++) {
+					value += "x"
+				}
+
+				return value
+			}
+
+			// split and add space after few character
+			function addSeparator(value, separator, join = " ") {
+				if (value.length > 0) {
+					value = value.match(new RegExp('.{1,' + separator + '}', 'g')).join(join)
+				}
+				return value
+			}
+
+			// sanitize value
+			function sanitize(value, max_length, is_number_only = false, separator = " ") {
+				value = value.split(separator).join("")
+				value = value.split('.').join("")
+				if (is_number_only && isNaN(value)) {
+					value = value.replace(/[^0-9]/g, '')
+				}
+
+				while (value.length > max_length) {
+					value = value.substring(0, value.length - 1 )
+				}
+
+				return value
+			}
+
+			// sanitize expiration date
+			function sanitizeExpirationDate(value) {
+				var month = ''
+				if (value && value.length > 2) {
+					var current_month = parseInt(value.substring(0, 2))
+					if (current_month > 12) {
+						month = '12'
+					} 
+					if (current_month == 0) {
+						month = '01'
+					}
+
+					console.log('current month', current_month)
+					value = month.length > 0 ? value.replace(current_month, month) : value
+					console.log('value', value)
+				}
+
+				return value
+			}
+
+			function getCardType(value) {
+			    //JCB
+			    jcb_regex = new RegExp('^(?:2131|1800|35)[0-9]{0,}$'); //2131, 1800, 35 (3528-3589)
+			    // American Express
+			    amex_regex = new RegExp('^3[47][0-9]{0,}$'); //34, 37
+			    // Diners Club
+			    diners_regex = new RegExp('^3(?:0[0-59]{1}|[689])[0-9]{0,}$'); //300-305, 309, 36, 38-39
+			    // Visa
+			    visa_regex = new RegExp('^4[0-9]{0,}$'); //4
+			    // MasterCard
+			    mastercard_regex = new RegExp('^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)[0-9]{0,}$'); //2221-2720, 51-55
+			    maestro_regex = new RegExp('^(5[06789]|6)[0-9]{0,}$'); //always growing in the range: 60-69, started with / not something else, but starting 5 must be encoded as mastercard anyway
+			    //Discover
+			    discover_regex = new RegExp('^(6011|65|64[4-9]|62212[6-9]|6221[3-9]|622[2-8]|6229[01]|62292[0-5])[0-9]{0,}$');
+			    ////6011, 622126-622925, 644-649, 65
+
+
+			    // get rid of anything but numbers
+			    value = value.replace(/\D/g, '');
+
+			    // checks per each, as their could be multiple hits
+			    //fix: ordering matter in detection, otherwise can give false results in rare cases
+			    var sel_brand = "unknown";
+			    if (value.match(jcb_regex)) {
+			        sel_brand = "jcb";
+			    } else if (value.match(amex_regex)) {
+			        sel_brand = "amex";
+			    } else if (value.match(diners_regex)) {
+			        sel_brand = "diners_club";
+			    } else if (value.match(visa_regex)) {
+			        sel_brand = "visa";
+			    } else if (value.match(mastercard_regex)) {
+			        sel_brand = "mastercard";
+			    } else if (value.match(discover_regex)) {
+			        sel_brand = "discover";
+			    } else if (value.match(maestro_regex)) {
+			        if (value[0] == '5') { //started 5 must be mastercard
+			            sel_brand = "mastercard";
+			        } else {
+			            sel_brand = "maestro"; //maestro is all 60-69 which is not something else, thats why this condition in the end
+			        }
+			    }
+
+			    return sel_brand;
+			}
+
+			// name
+			$('input[name=name]').on('keyup change', function(event) {
+				var max_length = $(this).attr('max-length')
+				var value = $(this).val()
+				var separator = 5
+
+				value = sanitize(value, max_length)
+				var filling = generateX(value, max_length)
+
+				card.find('.card-holder').text(addSeparator(filling, separator))
+				$(this).val(addSeparator(value, separator))
+			})
+
+			// card number
+			$('input[name=card-number]').on('keyup change', function(event) {
+				var max_length = $(this).attr('max-length')
+				var value = $(this).val()
+				var separator = 4
+
+				value = sanitize(value, max_length, true)
+				var card_type = getCardType(value)
+				var filling = generateX(value, max_length)
+
+				var input_icon = $('.card-icon')
+				var card_icon = $('.card .card-mastercard')
+				if (card_type == 'mastercard') {
+					input_icon.attr('src', input_icon.data('mastercard'))
+					input_icon.show()
+
+					card_icon.attr('src', card_icon.data('mastercard'))
+					card_icon.show()
+				} else if (card_type == 'visa') {
+					input_icon.attr('src', input_icon.data('visa'))
+					input_icon.show()
+
+					card_icon.attr('src', card_icon.data('visa'))
+					card_icon.show()
+				} else {
+					input_icon.hide()
+
+					card_icon.hide()
+				}
+
+				card.find('.card-number').text(addSeparator(filling, separator))
+				$(this).val(addSeparator(value, separator))
+			})
+
+			// expiration
+			$('input[name=expiration]').on('keyup change', function(event) {
+				var max_length = $(this).attr('max-length')
+				var value = $(this).val()
+				var separator = 2
+
+				value = sanitize(value, max_length, true, '/')
+				value = sanitizeExpirationDate(value)
+				var filling = generateX(value, max_length)
+
+				card.find('.expiration-date').text(addSeparator(filling, separator, '/'))
+				$(this).val(addSeparator(value, separator, '/'))
+			})
+
+			// generate random
+			$('.generate-random').click(function(event) {
+				var max_length = $(this).attr('max-length')
+				var generated_number = ''
+
+				while (generated_number.length < max_length) {
+					generated_number += Math.floor(Math.random() * 10)
+				}
+
+				$('input[name=card-number]').val(generated_number).trigger('change')
+			});
+		});
+	</script>
+</body>
+</html>

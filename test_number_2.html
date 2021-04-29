@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Number 2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	const asyncParallel = (tasks, final_callback) => {
+		if (tasks.length > 0) {
+			var func = tasks.shift()
+			var callback = () => {
+				asyncParallel(tasks, final_callback)
+			}
+
+			func(callback)
+		} else {
+			final_callback()
+		}
+	}
+
+	const asyncSeries = (tasks, final_callback, result = []) => {
+		if (tasks.length > 0) {
+			var func = tasks.shift()
+			var callback = (response) => {
+				result.push(response)
+				asyncSeries(tasks, final_callback, result)
+			}
+
+			func(callback)
+		} else {
+			final_callback(result)
+		}
+	}
+
+	const immutable = {
+		async_parallel: () => {
+			asyncParallel([
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 3')
+						callback()
+					}, 1500)
+				},
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 1')
+						callback()
+					}, 500)
+				},
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 2')
+						callback()
+					}, 1000)
+				},
+			], () => {
+				console.log('this was the final callback async parallel')
+				immutable.async_series()
+			})
+		},
+		async_series: () => {
+			asyncSeries([
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 3')
+						callback('test async series 3')
+					}, 1500)
+				},
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 1')
+						callback('test async series 1')
+					}, 500)
+				},
+				(callback) => {
+					setTimeout(() => {
+						console.log('test async series 2')
+						callback('test async series 2')
+					}, 1000)
+				},
+			], (result) => {
+				console.log('this was the final callback async series')
+				console.log('result: ', result)
+			})
+		}
+	}
+
+	// run async
+	immutable.async_parallel()
+</script>
+</body>
+</html>
